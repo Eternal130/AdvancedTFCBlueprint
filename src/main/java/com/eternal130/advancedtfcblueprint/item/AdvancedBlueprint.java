@@ -28,12 +28,21 @@ import com.gtnewhorizons.modularui.api.UIInfos;
 import com.gtnewhorizons.modularui.api.drawable.AdaptableUITexture;
 import com.gtnewhorizons.modularui.api.drawable.Text;
 import com.gtnewhorizons.modularui.api.drawable.UITexture;
-import com.gtnewhorizons.modularui.api.math.*;
+import com.gtnewhorizons.modularui.api.math.Alignment;
+import com.gtnewhorizons.modularui.api.math.Color;
+import com.gtnewhorizons.modularui.api.math.CrossAxisAlignment;
+import com.gtnewhorizons.modularui.api.math.MainAxisAlignment;
+import com.gtnewhorizons.modularui.api.math.Size;
 import com.gtnewhorizons.modularui.api.screen.IItemWithModularUI;
 import com.gtnewhorizons.modularui.api.screen.ModularWindow;
 import com.gtnewhorizons.modularui.api.screen.UIBuildContext;
 import com.gtnewhorizons.modularui.api.widget.Widget;
-import com.gtnewhorizons.modularui.common.widget.*;
+import com.gtnewhorizons.modularui.common.widget.ButtonWidget;
+import com.gtnewhorizons.modularui.common.widget.Column;
+import com.gtnewhorizons.modularui.common.widget.MultiChildWidget;
+import com.gtnewhorizons.modularui.common.widget.Row;
+import com.gtnewhorizons.modularui.common.widget.TabContainer;
+import com.gtnewhorizons.modularui.common.widget.TextWidget;
 import com.gtnewhorizons.modularui.common.widget.textfield.TextFieldWidget;
 
 public class AdvancedBlueprint extends ItemBlueprint implements IItemWithModularUI {
@@ -73,10 +82,6 @@ public class AdvancedBlueprint extends ItemBlueprint implements IItemWithModular
         }
     }
 
-    public boolean[][][] getModifiedData() {
-        return modifiedData;
-    }
-
     public int getCurrentLayer() {
         return currentLayer;
     }
@@ -100,10 +105,6 @@ public class AdvancedBlueprint extends ItemBlueprint implements IItemWithModular
 
     public Direction getDirection() {
         return direction;
-    }
-
-    public void setDirection(Direction direction) {
-        this.direction = direction;
     }
 
     private Direction direction = Direction.TOP;
@@ -144,7 +145,7 @@ public class AdvancedBlueprint extends ItemBlueprint implements IItemWithModular
             .addChild(createMainPage());
     }
 
-    public boolean translateLayer(Direction direction, int layer, int mov, boolean rotation, boolean reverse,
+    public void translateLayer(Direction direction, int layer, int mov, boolean rotation, boolean reverse,
         boolean mirror) {
         boolean[][] layerData = new boolean[8][8];
         boolean[][] newLayerData = new boolean[8][8];
@@ -181,7 +182,7 @@ public class AdvancedBlueprint extends ItemBlueprint implements IItemWithModular
                         if (newX >= 0 && newX < 8 && newZ >= 0 && newZ < 8) {
                             newLayerData[newX][newZ] = true;
                         } else {
-                            return false; // Translation out of bounds
+                            return; // Translation out of bounds
                         }
                     }
                 }
@@ -222,7 +223,6 @@ public class AdvancedBlueprint extends ItemBlueprint implements IItemWithModular
             }
         }
 
-        return true;
     }
 
     private Widget createMainPage() {
