@@ -2,7 +2,7 @@ package com.eternal130.advancedtfcblueprint;
 
 import net.minecraft.item.ItemStack;
 
-import com.dunk.tfc.api.TFCItems;
+import com.bioxx.tfc.api.TFCItems;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
