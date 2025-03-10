@@ -12,14 +12,14 @@ import net.minecraft.util.EnumChatFormatting;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
 
-import com.dunk.tfc.Core.TFCTabs;
-import com.dunk.tfc.Core.TFC_Core;
-import com.dunk.tfc.Items.ItemBlueprint;
-import com.dunk.tfc.Items.Tools.ItemChisel;
-import com.dunk.tfc.Items.Tools.ItemHammer;
-import com.dunk.tfc.TileEntities.TEDetailed;
-import com.dunk.tfc.api.TFCBlocks;
-import com.dunk.tfc.api.Util.Helper;
+import com.bioxx.tfc.Core.TFCTabs;
+import com.bioxx.tfc.Core.TFC_Core;
+import com.bioxx.tfc.Items.ItemBlueprint;
+import com.bioxx.tfc.Items.Tools.ItemChisel;
+import com.bioxx.tfc.Items.Tools.ItemHammer;
+import com.bioxx.tfc.TileEntities.TEDetailed;
+import com.bioxx.tfc.api.TFCBlocks;
+import com.bioxx.tfc.api.Util.Helper;
 import com.eternal130.advancedtfcblueprint.button.ButtonWidgetBlueprint;
 import com.eternal130.advancedtfcblueprint.button.ButtonWidgetDirection;
 import com.eternal130.advancedtfcblueprint.button.ButtonWidgetLayer;
@@ -57,7 +57,7 @@ public class AdvancedBlueprint extends ItemBlueprint implements IItemWithModular
 
     @Override
     public void registerIcons(IIconRegister register) {
-        this.itemIcon = register.registerIcon("terrafirmacraftplus:tools/Blueprint");
+        this.itemIcon = register.registerIcon("terrafirmacraft:tools/Blueprint");
     }
 
     public boolean getModifiedDataByDirectionAndLayer(int x, int z, Direction dir, int y) {

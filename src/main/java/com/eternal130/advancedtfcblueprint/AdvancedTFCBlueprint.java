@@ -15,7 +15,7 @@ import cpw.mods.fml.common.event.FMLServerStartingEvent;
     version = Tags.VERSION,
     name = "AdvancedTFCBlueprint",
     acceptedMinecraftVersions = "[1.7.10]",
-    dependencies = "required-after:terrafirmacraftplus;required-after:modularui")
+    dependencies = "required-after:terrafirmacraft;required-after:modularui")
 public class AdvancedTFCBlueprint {
 
     public static final String MODID = "advancedtfcblueprint";
