@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.eternal130.advancedtfcblueprint;
 
 import java.io.File;
 

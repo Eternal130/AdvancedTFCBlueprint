@@ -1,4 +1,4 @@
-package com.myname.mymodid;
+package com.eternal130.advancedtfcblueprint;
 
 public class ClientProxy extends CommonProxy {
 
