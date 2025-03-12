@@ -3,12 +3,16 @@ package com.eternal130.advancedtfcblueprint;
 import net.minecraft.item.ItemStack;
 
 import com.dunk.tfc.api.TFCItems;
+import com.eternal130.advancedtfcblueprint.network.NetworkHandler;
+import com.eternal130.advancedtfcblueprint.network.SaveNBTDataMessage;
+import com.eternal130.advancedtfcblueprint.network.SaveNBTDataMessageHandler;
 
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.event.FMLServerStartingEvent;
 import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.relauncher.Side;
 
 public class CommonProxy {
 
@@ -37,6 +41,8 @@ public class CommonProxy {
             new ItemStack(net.minecraft.init.Items.paper, 1),
             new ItemStack(net.minecraft.init.Items.paper, 1),
             new ItemStack(net.minecraft.init.Items.paper, 1));
+        NetworkHandler.INSTANCE
+            .registerMessage(SaveNBTDataMessageHandler.class, SaveNBTDataMessage.class, 0, Side.SERVER);
     }
 
     // postInit "Handle interaction with other mods, complete your setup based on this." (Remove if not needed)
