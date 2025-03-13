@@ -1,6 +1,7 @@
 item.AdvancedBlueprint=高级蓝图
 gui.AdvancedBlueprint.title=高级蓝图
 gui.AdvancedBlueprint.cancel=取消
-gui.AdvancedBlueprint.done=完成
+gui.AdvancedBlueprint.save=保存
+gui.AdvancedBlueprint.name=名字:
 gui.AdvancedBlueprint.Inst0=对着一个可雕刻的方块§a潜行§7§b右击§7将方块样式存入蓝图。
 gui.AdvancedBlueprint.Inst1=或是§b右击§7应用蓝图样式。
