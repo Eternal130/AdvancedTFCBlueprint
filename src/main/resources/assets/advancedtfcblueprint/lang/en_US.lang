@@ -1,6 +1,7 @@
 item.AdvancedBlueprint=Advanced Blueprint
 gui.AdvancedBlueprint.title=Advanced Blueprint
 gui.AdvancedBlueprint.cancel=Cancel
-gui.AdvancedBlueprint.done=Done
+gui.AdvancedBlueprint.save=Save
+gui.AdvancedBlueprint.name=Name:
 gui.AdvancedBlueprint.Inst0=§aSneak§7 and §bRight Click §7on a detailed block to store it's schematic to blueprint.
 gui.AdvancedBlueprint.Inst1=Or §bRight Click §7to apply blueprint schematic.

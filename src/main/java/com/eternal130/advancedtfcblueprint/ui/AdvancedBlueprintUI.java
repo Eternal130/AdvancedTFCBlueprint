@@ -13,6 +13,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import com.bioxx.tfc.TileEntities.TEDetailed;
 import com.bioxx.tfc.api.TFCBlocks;
 import com.bioxx.tfc.api.Util.Helper;
+import com.bioxx.tfc.Core.TFC_Core;
 import com.cleanroommc.modularui.api.drawable.IDrawable;
 import com.cleanroommc.modularui.api.drawable.IKey;
 import com.cleanroommc.modularui.drawable.GuiTextures;
@@ -29,6 +30,9 @@ import com.cleanroommc.modularui.widgets.layout.Column;
 import com.cleanroommc.modularui.widgets.layout.Grid;
 import com.cleanroommc.modularui.widgets.layout.Row;
 import com.cleanroommc.modularui.widgets.textfield.TextFieldWidget;
+import com.dunk.tfc.TileEntities.TEDetailed;
+import com.dunk.tfc.api.TFCBlocks;
+import com.dunk.tfc.api.Util.Helper;
 import com.eternal130.advancedtfcblueprint.Items;
 import com.eternal130.advancedtfcblueprint.Tool;
 import com.eternal130.advancedtfcblueprint.button.ButtonCarved;
@@ -130,7 +134,7 @@ public class AdvancedBlueprintUI {
         panel.child(
             new Column().margin(7)
                 .child(
-                    new TextWidget("Advanced Blueprint").alignment(Alignment.Center)
+                    new TextWidget(TFC_Core.translate("gui.AdvancedBlueprint.title")).alignment(Alignment.Center)
                         .color(0x000000)
                         .style(EnumChatFormatting.BOLD)
                         .size(90, 15))
@@ -138,7 +142,7 @@ public class AdvancedBlueprintUI {
                     new Row().size(232, 15)
                         .margin(0)
                         .child(
-                            new TextWidget("Name:").size(25, 15)
+                            new TextWidget(TFC_Core.translate("gui.AdvancedBlueprint.name")).size(25, 15)
                                 .marginLeft(5))
                         .child(nameField))
                 .child(
@@ -253,8 +257,10 @@ public class AdvancedBlueprintUI {
             .size(78, 20);
         saveRow.align(Alignment.BottomRight);
         SaveButtons[0] = new ButtonWidget<>().size(37, 17)
-            .background(GuiTextures.MC_BUTTON, IKey.str("Cancel"))
-            .hoverBackground(GuiTextures.MC_BUTTON_HOVERED, IKey.str("Cancel"))
+            .background(GuiTextures.MC_BUTTON, IKey.str(TFC_Core.translate("gui.AdvancedBlueprint.cancel")))
+            .hoverBackground(
+                GuiTextures.MC_BUTTON_HOVERED,
+                IKey.str(TFC_Core.translate("gui.AdvancedBlueprint.cancel")))
             .onMousePressed(mouseButton -> {
                 if (Minecraft.getMinecraft().thePlayer.getHeldItem() != null
                     && Minecraft.getMinecraft().thePlayer.getHeldItem()
@@ -265,8 +271,8 @@ public class AdvancedBlueprintUI {
             .marginRight(2)
             .marginBottom(6);
         SaveButtons[1] = new ButtonWidget<>().size(37, 17)
-            .background(GuiTextures.MC_BUTTON, IKey.str("Save"))
-            .hoverBackground(GuiTextures.MC_BUTTON_HOVERED, IKey.str("Save"))
+            .background(GuiTextures.MC_BUTTON, IKey.str(TFC_Core.translate("gui.AdvancedBlueprint.save")))
+            .hoverBackground(GuiTextures.MC_BUTTON_HOVERED, IKey.str(TFC_Core.translate("gui.AdvancedBlueprint.save")))
             .onMousePressed(mouseButton -> {
                 saveDataToNBT();
                 return true;
