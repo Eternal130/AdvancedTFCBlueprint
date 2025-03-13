@@ -15,6 +15,8 @@ The Advanced Blueprint aims to enhance the functionality of TFC blueprints. This
 - **Blueprint Naming**: Below the title, you can input any string as the blueprint's name. After saving, this name will be used as the item's name.
 - **Blueprint Controls**:
   - Left-click to toggle whether the current position is carved. The default state is uncarved, displayed as a slashed grid.
+  - Right-click to toggle the state of all blocks on the current layer and below.
+  - Left-click and drag to carve a continuous area.
 - **Operation Buttons**:
   - Below the blueprint controls, there are 8 buttons that allow you to perform the following operations on the carved schematic:
     - Move left
