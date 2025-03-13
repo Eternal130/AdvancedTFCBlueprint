@@ -39,6 +39,7 @@ import com.eternal130.advancedtfcblueprint.button.ButtonEdit;
 import com.eternal130.advancedtfcblueprint.button.ButtonLayer;
 import com.eternal130.advancedtfcblueprint.network.NetworkHandler;
 import com.eternal130.advancedtfcblueprint.network.SaveNBTDataMessage;
+import com.eternal130.advancedtfcblueprint.widget.DragableGridWidget;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
@@ -120,7 +121,7 @@ public class AdvancedBlueprintUI {
 
     private void resetData() {
         modifiedData = new boolean[8][8][8];
-        name = "name_it";
+        name = "";
         nameField.setText(name);
         currentLayer = 0;
         direction = Tool.Direction.TOP;
@@ -174,7 +175,7 @@ public class AdvancedBlueprintUI {
     }
 
     private static Widget regCarvedButtons() {
-        Grid carvedGrid = new Grid();
+        Grid carvedGrid = new DragableGridWidget();
         carvedGrid.marginTop(9)
             .marginLeft(9)
             .size(128, 128);

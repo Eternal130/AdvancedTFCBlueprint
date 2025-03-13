@@ -33,6 +33,22 @@ public class ButtonCarved<W extends ButtonCarved<W>> extends ButtonWidget<W> {
 
     @Override
     public @NotNull Result onMousePressed(int mouseButton) {
+        if (mouseButton == 1) {
+            super.playClickSound();
+            int currentLayer = AdvancedBlueprintUI.getCurrentLayer();
+            for (int i = currentLayer; i < 8; i++) {
+                Tool.setModifiedDataByDirectionAndLayer(
+                    x,
+                    y,
+                    AdvancedBlueprintUI.getDirection(),
+                    i,
+                    AdvancedBlueprintUI.getModifiedData());
+            }
+        }
+        return Result.ACCEPT;
+    }
+
+    public void clicked(int mouseButton) {
         if (mouseButton == 0) {
             super.playClickSound();
             Tool.setModifiedDataByDirectionAndLayer(
@@ -42,7 +58,6 @@ public class ButtonCarved<W extends ButtonCarved<W>> extends ButtonWidget<W> {
                 AdvancedBlueprintUI.getCurrentLayer(),
                 AdvancedBlueprintUI.getModifiedData());
         }
-        return Result.ACCEPT;
     }
 
     @Override
