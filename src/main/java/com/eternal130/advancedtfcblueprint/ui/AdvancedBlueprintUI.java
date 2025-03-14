@@ -105,6 +105,7 @@ public class AdvancedBlueprintUI {
     @SubscribeEvent
     public void onItemUse(PlayerInteractEvent event) {
         ItemStack heldItem = event.entityPlayer.getHeldItem();
+        if (heldItem == null) return;
         if (event.entityPlayer.getEntityWorld().isRemote && !event.entityPlayer.isSneaking()
             && heldItem.getItem() == Items.advancedBlueprint) {
             MovingObjectPosition mo = Helper.getMouseOverObject(event.entityPlayer, event.world);
