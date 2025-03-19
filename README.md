@@ -39,3 +39,8 @@ The Advanced Blueprint aims to enhance the functionality of TFC blueprints. This
 ## Notes
 
 - The blueprint can be edited and used infinitely without being consumed, making its recipe relatively expensive.
+
+## Planned Features
+- Save and load blueprints to and from files.
+- Share blueprints with other players on the server.
+- Add a block to upload and download blueprints to and from the server.
